@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: whitesmoke;
+            width: fit-content;
+            text-align: center;
+            justify-content: center;
+            justify-items: center;
+            margin: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h2>Age Calculator</h2>
+    <input type="Date" id="dob" placeholder="ENTER YOUR DATE OF BIRTH">
+    <h3 id="result"></h3>
+    <button onclick="calculateAge()">Calculate Age</button>
+</div>
+    <script>
+        function calculateAge(){
+            let dob=document.getElementById("dob").value;
+            if(!dob){
+                alert("plz enter your date of birth")
+            }
+            let dobdate=new Date(dob);
+            let today=new Date();
+            let age=today.getFullYear()-dobdate.getFullYear()
+            document.getElementById("result").innerText="your age is :"+age;
+        }
+       
+    </script>
+</body>
+
+</html>
